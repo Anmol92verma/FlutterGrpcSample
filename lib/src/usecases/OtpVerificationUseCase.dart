@@ -2,12 +2,12 @@ import 'package:grpc_flutter/protos/auth/AuthService.pb.dart';
 import 'package:grpc_flutter/src/base/BaseUseCase.dart';
 import 'package:grpc_flutter/src/repository/AuthRepository.dart';
 
-class SignupUseCase extends BaseUseCase<AuthRequest, AuthResponse> {
+class OtpVerificationUseCode extends BaseUseCase<AuthVerify, AuthResponse> {
   AuthRepository authRepository;
 
-  SignupUseCase(this.authRepository);
+  OtpVerificationUseCode(this.authRepository);
 
   @override
-  Future<AuthResponse> perform(AuthRequest withData) async =>
-      await authRepository.signupUser(withData);
+  Future<AuthResponse> perform(AuthVerify withData) async =>
+      await authRepository.authVerify(withData);
 }
