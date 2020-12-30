@@ -5,18 +5,21 @@ import 'package:grpc_flutter/protos/auth/AuthService.pbgrpc.dart';
 class AuthRepository {
 
   static final AuthRepository _authRepository = AuthRepository._internal();
+  static const HOST = "192.168.1.15";
+  static const PORT = 8443;
+  static const String authority = "$HOST:$PORT";
 
   factory AuthRepository() {
     return _authRepository;
   }
 
   AuthRepository._internal();
-  
-  
+
+
   final authService = AuthServiceClient(ClientChannel(
-    '192.168.1.15',
-    port: 8080,
-    options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+    HOST,
+    port: PORT,
+    options: const ChannelOptions(credentials: ChannelCredentials.secure(authority: authority)),
   ));
 
   Future<AuthResponse> signupUser(AuthRequest signupRequest) async {
