@@ -1,8 +1,8 @@
 ///
 //  Generated code. Do not modify.
-//  source: FileTransfer.proto
+//  source: fileservice/FileTransfer.proto
 //
-// @dart = 2.3
+// @dart = 2.7
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
@@ -17,7 +17,19 @@ class FileUploadType extends $pb.GeneratedMessage {
   ;
 
   FileUploadType._() : super();
-  factory FileUploadType() => create();
+  factory FileUploadType({
+    $core.String fileName,
+    $core.List<$core.int> fileData,
+  }) {
+    final _result = create();
+    if (fileName != null) {
+      _result.fileName = fileName;
+    }
+    if (fileData != null) {
+      _result.fileData = fileData;
+    }
+    return _result;
+  }
   factory FileUploadType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FileUploadType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -29,7 +41,7 @@ class FileUploadType extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FileUploadType copyWith(void Function(FileUploadType) updates) => super.copyWith((message) => updates(message as FileUploadType)); // ignore: deprecated_member_use
+  FileUploadType copyWith(void Function(FileUploadType) updates) => super.copyWith((message) => updates(message as FileUploadType)) as FileUploadType; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static FileUploadType create() => FileUploadType._();
@@ -65,7 +77,15 @@ class FileUploadResponseMessage extends $pb.GeneratedMessage {
   ;
 
   FileUploadResponseMessage._() : super();
-  factory FileUploadResponseMessage() => create();
+  factory FileUploadResponseMessage({
+    $core.bool success,
+  }) {
+    final _result = create();
+    if (success != null) {
+      _result.success = success;
+    }
+    return _result;
+  }
   factory FileUploadResponseMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FileUploadResponseMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -77,7 +97,7 @@ class FileUploadResponseMessage extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FileUploadResponseMessage copyWith(void Function(FileUploadResponseMessage) updates) => super.copyWith((message) => updates(message as FileUploadResponseMessage)); // ignore: deprecated_member_use
+  FileUploadResponseMessage copyWith(void Function(FileUploadResponseMessage) updates) => super.copyWith((message) => updates(message as FileUploadResponseMessage)) as FileUploadResponseMessage; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static FileUploadResponseMessage create() => FileUploadResponseMessage._();
@@ -104,7 +124,15 @@ class FileDownloadRequestMessage extends $pb.GeneratedMessage {
   ;
 
   FileDownloadRequestMessage._() : super();
-  factory FileDownloadRequestMessage() => create();
+  factory FileDownloadRequestMessage({
+    $core.String fileName,
+  }) {
+    final _result = create();
+    if (fileName != null) {
+      _result.fileName = fileName;
+    }
+    return _result;
+  }
   factory FileDownloadRequestMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FileDownloadRequestMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -116,7 +144,7 @@ class FileDownloadRequestMessage extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FileDownloadRequestMessage copyWith(void Function(FileDownloadRequestMessage) updates) => super.copyWith((message) => updates(message as FileDownloadRequestMessage)); // ignore: deprecated_member_use
+  FileDownloadRequestMessage copyWith(void Function(FileDownloadRequestMessage) updates) => super.copyWith((message) => updates(message as FileDownloadRequestMessage)) as FileDownloadRequestMessage; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static FileDownloadRequestMessage create() => FileDownloadRequestMessage._();
@@ -143,7 +171,15 @@ class FileDownloadResponseMessage extends $pb.GeneratedMessage {
   ;
 
   FileDownloadResponseMessage._() : super();
-  factory FileDownloadResponseMessage() => create();
+  factory FileDownloadResponseMessage({
+    $core.List<$core.int> fileData,
+  }) {
+    final _result = create();
+    if (fileData != null) {
+      _result.fileData = fileData;
+    }
+    return _result;
+  }
   factory FileDownloadResponseMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FileDownloadResponseMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -155,7 +191,7 @@ class FileDownloadResponseMessage extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FileDownloadResponseMessage copyWith(void Function(FileDownloadResponseMessage) updates) => super.copyWith((message) => updates(message as FileDownloadResponseMessage)); // ignore: deprecated_member_use
+  FileDownloadResponseMessage copyWith(void Function(FileDownloadResponseMessage) updates) => super.copyWith((message) => updates(message as FileDownloadResponseMessage)) as FileDownloadResponseMessage; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static FileDownloadResponseMessage create() => FileDownloadResponseMessage._();

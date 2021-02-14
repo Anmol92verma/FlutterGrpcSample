@@ -1,8 +1,8 @@
 ///
 //  Generated code. Do not modify.
-//  source: AuthService.proto
+//  source: auth/AuthService.proto
 //
-// @dart = 2.3
+// @dart = 2.7
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
@@ -16,7 +16,15 @@ class AuthRequest extends $pb.GeneratedMessage {
   ;
 
   AuthRequest._() : super();
-  factory AuthRequest() => create();
+  factory AuthRequest({
+    $core.String phoneNumber,
+  }) {
+    final _result = create();
+    if (phoneNumber != null) {
+      _result.phoneNumber = phoneNumber;
+    }
+    return _result;
+  }
   factory AuthRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -28,7 +36,7 @@ class AuthRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AuthRequest copyWith(void Function(AuthRequest) updates) => super.copyWith((message) => updates(message as AuthRequest)); // ignore: deprecated_member_use
+  AuthRequest copyWith(void Function(AuthRequest) updates) => super.copyWith((message) => updates(message as AuthRequest)) as AuthRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static AuthRequest create() => AuthRequest._();
@@ -56,7 +64,19 @@ class AuthResponse extends $pb.GeneratedMessage {
   ;
 
   AuthResponse._() : super();
-  factory AuthResponse() => create();
+  factory AuthResponse({
+    $core.int code,
+    $core.String message,
+  }) {
+    final _result = create();
+    if (code != null) {
+      _result.code = code;
+    }
+    if (message != null) {
+      _result.message = message;
+    }
+    return _result;
+  }
   factory AuthResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -68,7 +88,7 @@ class AuthResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AuthResponse copyWith(void Function(AuthResponse) updates) => super.copyWith((message) => updates(message as AuthResponse)); // ignore: deprecated_member_use
+  AuthResponse copyWith(void Function(AuthResponse) updates) => super.copyWith((message) => updates(message as AuthResponse)) as AuthResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static AuthResponse create() => AuthResponse._();
@@ -105,7 +125,19 @@ class AuthVerify extends $pb.GeneratedMessage {
   ;
 
   AuthVerify._() : super();
-  factory AuthVerify() => create();
+  factory AuthVerify({
+    $core.String phoneNumber,
+    $core.String code,
+  }) {
+    final _result = create();
+    if (phoneNumber != null) {
+      _result.phoneNumber = phoneNumber;
+    }
+    if (code != null) {
+      _result.code = code;
+    }
+    return _result;
+  }
   factory AuthVerify.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthVerify.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -117,7 +149,7 @@ class AuthVerify extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AuthVerify copyWith(void Function(AuthVerify) updates) => super.copyWith((message) => updates(message as AuthVerify)); // ignore: deprecated_member_use
+  AuthVerify copyWith(void Function(AuthVerify) updates) => super.copyWith((message) => updates(message as AuthVerify)) as AuthVerify; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static AuthVerify create() => AuthVerify._();

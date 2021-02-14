@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:grpc_flutter/protos/auth/AuthService.pb.dart';
+import 'package:grpc_flutter/src/generated/auth/AuthService.pb.dart';
 import 'package:grpc_flutter/src/repository/AuthRepository.dart';
 import 'package:grpc_flutter/src/usecases/OtpVerificationUseCase.dart';
 import 'package:grpc_flutter/src/usecases/SignupUseCase.dart';
@@ -31,7 +31,8 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+      appBar: AppBar(brightness: Brightness.light,),
+      body: GestureDetector(child: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(8),
           child: Column(
@@ -91,14 +92,16 @@ class _SignupPageState extends State<SignupPage> {
               loading
                   ? CircularProgressIndicator()
                   : Text(
-                      authStatus == "" ? "" : authStatus,
-                      style: TextStyle(
-                          color: authCode != 200 ? Colors.red : Colors.green),
-                    )
+                authStatus == "" ? "" : authStatus,
+                style: TextStyle(
+                    color: authCode != 200 ? Colors.red : Colors.green),
+              )
             ],
           ),
         ),
-      ),
+      ),onTap: (){
+        FocusScope.of(context).unfocus();
+      },),
     );
   }
 
