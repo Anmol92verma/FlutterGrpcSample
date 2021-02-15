@@ -24,10 +24,10 @@ class AuthRepository {
   }
 
   Future<ClientChannel> makeChannel() async {
-    return ClientChannel(
-      HOST,
-      port: PORT
-    );
+    return ClientChannel(HOST,
+        port: PORT,
+        options: ChannelOptions(
+            credentials: ChannelCredentials.insecure(authority: authority)));
   }
 
   ChannelCredentials channelCredentials(String caCert) {
